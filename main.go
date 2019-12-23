@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mrobinsn/go-rtorrent/rtorrent"
+	"github.com/liuxu623/go-rtorrent/rtorrent"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
 )
