@@ -1,4 +1,4 @@
-module github.com/mrobinsn/go-rtorrent
+module github.com/liuxu623/go-rtorrent
 
 require (
 	github.com/pkg/errors v0.8.1
