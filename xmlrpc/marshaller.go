@@ -6,6 +6,7 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
+	"golang.org/x/net/html/charset"
 	"io"
 	"reflect"
 	"strconv"
@@ -621,6 +622,7 @@ func getFault(v interface{}) (*Fault, bool) {
 // or the Fault if this is a Fault
 func Unmarshal(r io.Reader) (name string, params []interface{}, fault *Fault, e error) {
 	p := xml.NewDecoder(r)
+	p.CharsetReader = charset.NewReaderLabel
 	st := newParser(p)
 	typ := "methodResponse"
 	if _, e = st.getStart(typ); ErrEq(e, errNameMismatch) { // methodResponse or methodCall
